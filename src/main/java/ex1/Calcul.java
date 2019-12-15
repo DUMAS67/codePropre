@@ -14,6 +14,7 @@ public class Calcul {
 	 */
 	public int addition(int a, int b){
 		return a+b;
+		
 	}
 	
 	/**Méthode qui retourne la soustraction des paramètres a et b

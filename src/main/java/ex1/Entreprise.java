@@ -15,7 +15,8 @@ public class Entreprise {
 	
 	public static final long CAPITAL_MAX = 3_000_000; // Constante de capital maximum
 	
-	/* méthode qui affiche le statut de l'entreprise*/
+	/* méthode qui 
+	 * affiche le statut de l'entreprise*/
 	
 	public void AfficherStatut(){
 		
