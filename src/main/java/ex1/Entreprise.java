@@ -2,16 +2,22 @@ package ex1;
 
 import java.util.Date;
 
-public class entreprise {
+/* Classe qui affiche les données administratives d'une entreprise
+ * @author DIGINAMIC
+ */
 
-	public int Siret;
-	public String Nom;
-	public String adresse;
-	public Date date_Creation;
+public class Entreprise {
+
+	private long siret; // Nom du Siret de l'Entreprise
+	private String nom; // Nom de l'Entreprise
+	private String adresse; // Adresse de l'entreprise
+	private Date dateCreation; // Date de Création de l'Entreprise
 	
-	public static final int capitalMax = 3000000;
+	public static final long CAPITAL_MAX = 3_000_000; // Constante de capital maximum
 	
-	public void Afficher_statut(){
+	/* méthode qui affiche le statut de l'entreprise*/
+	
+	public void AfficherStatut(){
 		
 	}
 	
