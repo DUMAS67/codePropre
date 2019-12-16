@@ -5,6 +5,9 @@ package ex2;
  */
 public class CompteBancaire {
 
+	final String LIVRET_A = "LA"; // Constante valeur d'un livret A
+	final String COMPTE_COURANT="CC"; // Constante valeur d'un compte bancaire
+	
 	/** solde : solde du compte */
 	private double solde;
 	
@@ -17,11 +20,7 @@ public class CompteBancaire {
 	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
 	private String type;
 	
-	/**
-	 * @param solde
-	 * @param decouvert
-	 * @param type
-	 */
+	
 	public CompteBancaire(String type, double solde, double decouvert) {
 		super();
 		this.type = type;
@@ -30,7 +29,7 @@ public class CompteBancaire {
 	}
 	
 	/** Ce constructeur est utilisé pour créer un compte de type Livret A
-	 * @param type = LA
+	 * @param type = Livret A
 	 * @param solde représente le solde du compte
 	 * @param decouvert  représente le découvert autorisé
 	 * @param tauxRemuneration  représente le taux de rémunération du livret A
@@ -54,20 +53,23 @@ public class CompteBancaire {
 	 * @param montant
 	 */
 	public void debiterMontant(double montant){
-		if (type.equals("CC")){
+		if (type.equals(COMPTE_COURANT)){
 			if (this.solde - montant > decouvert){
 				this.solde = solde - montant;
 			}	
 		}
-		else if (type.equals("LA")){
+		else if (type.equals(LIVRET_A)){
 			if (this.solde - montant > 0){
 				this.solde = solde - montant;
 			}	
 		}
 	}
 	
+	/* Applique à un compte la Rémunération Annuellle basée sur le 
+	 * taux de rémunération
+	 */
 	public void appliquerRemuAnnuelle(){
-		if (type.equals("LA")){
+		if (type.equals(LIVRET_A)){
 			this.solde = solde + solde*tauxRemuneration/100;
 		}
 	}
