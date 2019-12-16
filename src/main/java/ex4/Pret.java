@@ -1,41 +1,43 @@
 package ex4;
 
 import java.util.Date;
-
-public class Pret {
-
+/* 
+ * Classe de Pret avec plusieurs constructeurs*
+ */ 
+ class Pret {
+ 
+	 /* attribut qui récupère les comportement de l'interface Strategy */
 	private Strategy strategy;
+	/* attribut qui informe le capital demandé */
 	private double capital;
+	/* attribut qui informe le capital restant */
 	private double capitalRestantDu;
+	/* attribut qui informe du taux du prêt */
 	private double taux;
+	/* attribut qui informe de la Date de début du prêt*/
 	private Date dateDebut;
+	/* attribut qui informe de la Date de fin du prêt*/
+	
 	private Date dateFin;
 	
-	public Pret(double capital, double taux, Date dateDebut) {
+	/*constructeur 1 */
+	public Pret(double capital, double taux, Date dateDebut) { 
 		super();
 		this.strategy = new PretATerme();
 		this.capital = capital;
 		this.taux = taux;
 		this.dateDebut = dateDebut;
 	}
-	
+	/*constructeur 2 = constructeur 1  + dateFin*/
 	public Pret(double capital, double taux, Date dateDebut, Date dateFin) {
-		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
+		new Pret(capital,taux,dateDebut);
 		this.dateFin = dateFin;
 	}
 	
+	/*constructeur 3 = constructeur 2  + CapitalRestantDu*/
 	public Pret(double capital, double capitalRestantDu, double taux, Date dateDebut, Date dateFin) {
-		super();
-		this.strategy = new PretATerme();
-		this.capital = capital;
+		new Pret(capital,taux,dateDebut, dateFin);
 		this.capitalRestantDu = capitalRestantDu;
-		this.taux = taux;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
 	}
 
 	/** Getter for strategy
